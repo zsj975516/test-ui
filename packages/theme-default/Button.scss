@@ -1,0 +1,80 @@
+$corlor_map: (
+        default:#ffffff,
+        primary:#3faaf5,
+        success:#13ce66,
+        info:#50bfff,
+        warning:#f7ba2a,
+        danger:#ff4949,
+);
+
+$size_map: (
+        small:8px,
+        normal:10px,
+        medium:14px,
+        large:16px,
+);
+
+.u-button {
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 14px;
+
+  &:hover {
+    color: #3faaf5;
+  }
+
+  &.u-button-type__default {
+    color: black;
+    border-width: 1px;
+  }
+
+  @each $corlor_name, $corlor_value in $corlor_map {
+    &.u-button-type__#{$corlor_name} {
+      background-color: $corlor_value;
+      @if $corlor_name != default {
+        border-color: $corlor_value;
+      }
+
+      &:hover {
+        opacity: 0.7;
+        @if $corlor_name != default {
+          color: white;
+        }
+      }
+      &.is-plain {
+        background-color: transparentize($corlor_value, 0.9);
+        color: black;
+        border-width: 1px;
+        &:hover {
+          background-color: $corlor_value;
+          opacity: 1;
+          @if $corlor_name != default {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @each $size_name, $size_value in $size_map {
+    &.u-button-size__#{$size_name} {
+      padding: $size_value 20px;
+      &.is-round {
+        border-radius: ($size_value*2+16) / 2;
+      }
+    }
+  }
+
+  &.is-disable {
+    pointer-events: none;
+    opacity: .4;
+  }
+}

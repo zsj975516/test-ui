@@ -1,29 +1,68 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view class="app-router-view"/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  @import "../packages/theme-default/index";
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    height: 100vh;
+    .app-router-view {
+      height: 100%;
     }
   }
-}
+
+  .code_inline {
+    background-color: #ececec;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .hljs-tag {
+    color: #000080;
+    /*font-weight: bold;*/
+    .hljs-name {
+      color: #000080;
+    }
+    .hljs-attr {
+      color: #0036f9;
+    }
+    .hljs-string {
+      color: #008000;
+    }
+  }
+
+  .demo-table {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    thead {
+      background-color: #e9e9e9;
+      tr {
+        height: 40px;
+      }
+      th {
+
+      }
+    }
+    tbody {
+      tr {
+        height: 40px;
+      }
+      td {
+        border-top: 1px solid #ccc;
+      }
+    }
+  }
 </style>

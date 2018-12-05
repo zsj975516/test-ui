@@ -1,25 +1,51 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import("./views/Home.vue"),
+      props: {}
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/doc',
+      name: 'doc',
+      component: () => import("./views/Doc.vue"),
+      props: route => {
+        let list = router.options.routes.find(item => item.name === 'doc').children;
+        list = list.map(item => {
+          return item.meta
+        });
+        return {list}
+      },
+      children: [
+        {
+          path: '/',
+          name: 'index',
+          meta: {
+            name: '文档首页',
+            path: '/doc'
+          },
+          component: () => import('./docs/index.md'),
+        },
+        {
+          path: 'button',
+          name: 'button',
+          meta: {
+            name: '按钮',
+            path: '/doc/button'
+          },
+          component: () => import('./docs/button.md'),
+        }
+      ]
+    },
   ]
-})
+});
+
+export default router;
