@@ -45,23 +45,25 @@
   .demo-table {
     border-collapse: separate;
     border-spacing: 0 0;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     font-size: 18px;
+    width: 90%;
+    margin: 0 auto;
     thead {
       background-color: #e9e9e9;
       tr {
-        height: 40px;
-      }
-      th {
+        height: 50px;
+        th {
 
+        }
       }
     }
     tbody {
       tr {
-        height: 40px;
-      }
-      td {
-        border-top: 1px solid #ccc;
+        td {
+          padding: 15px 5px;
+          border-top: 1px solid #ccc;
+        }
       }
     }
   }

@@ -5,7 +5,7 @@
     </div>
     <div class="container">
       <div class="nav">
-        <div class="nav_item" :class="{active:item.path===currentPath}" @click="navItemClick(item)"
+        <div class="nav_item" :class="{active:isCurrent(item)}" @click="navItemClick(item)"
              v-for="item in list">
           {{item.name}}
         </div>
@@ -21,22 +21,25 @@
     name: 'doc',
     data() {
       return {
-        currentPath: '',
+        currPath: '',
       }
     },
     components: {},
-    props: {
-      list: {
-        type: Array,
-      }
+    created() {
+      this.currPath = this.currentPath;
     },
-    mounted() {
-      console.log(this.list)
+    props: {
+      list: Array,
+      currentPath: String,
     },
     methods: {
       navItemClick(item) {
-        this.currentPath = item.path;
+        this.currPath = item.path;
         this.$router.push(item.path);
+      },
+      isCurrent(item) {
+        let re = new RegExp(item.path + '\/?$');
+        return re.test(this.currPath);
       }
     }
   }

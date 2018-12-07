@@ -47,17 +47,26 @@ $size_map: (
         opacity: 0.7;
         @if $corlor_name != default {
           color: white;
+        } @else {
+          color: #409EFF;
+          border-color: #409EFF;
         }
       }
+
       &.is-plain {
         background-color: transparentize($corlor_value, 0.9);
         color: black;
         border-width: 1px;
+
         &:hover {
           background-color: $corlor_value;
           opacity: 1;
           @if $corlor_name != default {
             color: white;
+          }
+          @else {
+            color: #409EFF;
+            border-color: #409EFF;
           }
         }
       }
@@ -67,6 +76,7 @@ $size_map: (
   @each $size_name, $size_value in $size_map {
     &.u-button-size__#{$size_name} {
       padding: $size_value 20px;
+
       &.is-round {
         border-radius: ($size_value*2+16) / 2;
       }
@@ -75,6 +85,6 @@ $size_map: (
 
   &.is-disable {
     pointer-events: none;
-    opacity: .4;
+    opacity: .5;
   }
 }
