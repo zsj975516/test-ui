@@ -86,4 +86,3 @@
 | type     | 类型   | string    |   primary,success,warning,danger,info |     —    |
 | plain     | 是否朴素按钮   | Boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
-| icon  | 图标，已有的图标库中的图标名 | string   |  —  |  —  |

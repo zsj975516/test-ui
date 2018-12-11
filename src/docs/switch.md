@@ -15,7 +15,7 @@
     }
   </script>
 
-# CheckBox 复选框
+# Switch 开关
 ----
 ### 基础用法
 
@@ -42,12 +42,3 @@
 
 ```
 :::
-
-### Attributes
-| 参数      | 说明    | 类型      | 可选值       | 默认值   |
-|---------- |-------- |---------- |-------------  |-------- |
-| indeterminate     | 尺寸   | string  |   default,medium,small            |    —     |
-| label     | 类型   | string    |   primary,success,warning,danger,info |     —    |
-| disabled     | 是否朴素按钮   | Boolean    | — | false   |
-| true-label  | 是否禁用状态    | boolean   | —   | false   |
-| false-label  | 图标，已有的图标库中的图标名 | string   |  —  |  —  |

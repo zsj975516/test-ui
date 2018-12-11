@@ -32,6 +32,7 @@
 <script>
   export default {
     name: "UCheckBox",
+    componentName: 'UCheckBox',
     data() {
       return {
         selfModel: false,

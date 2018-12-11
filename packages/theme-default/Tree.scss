@@ -1,0 +1,58 @@
+.u-tree {
+  .u-tree-node {
+    .u-tree-node__content {
+      cursor: default;
+      user-select: none;
+
+      .u-tree-node__expand-icon {
+        display: inline-block;
+        vertical-align: top;
+        transition-duration: 300ms;
+        position: relative;
+        height: 18px;
+        width: 18px;
+
+        &::before {
+          content: '\27A7';
+          font-size: 12px;
+          text-align: center;
+          display: block;
+          line-height: 18px;
+          color: #b7b7b7;
+        }
+
+        &.expanded {
+          transform: rotateZ(90deg);
+        }
+
+        &.is-leaf {
+          visibility: hidden;
+        }
+      }
+
+      .u-tree-node__loading-icon {
+
+      }
+
+      &:hover {
+        background-color: #ececec;
+      }
+    }
+
+    .u-tree-node__children {
+
+    }
+  }
+
+  .u-tree__empty-block {
+    .u-tree__empty-text {
+
+    }
+  }
+
+  &.u-tree--highlight-current {
+    .is-current {
+      background-color: #50bfff;
+    }
+  }
+}

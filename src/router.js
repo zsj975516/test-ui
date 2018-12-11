@@ -41,6 +41,12 @@ export default new Router({
       props: {}
     },
     {
+      path: '/test',
+      name: 'test',
+      component: () => import("./views/Test.vue"),
+      props: {}
+    },
+    {
       path: '/doc',
       name: 'doc',
       component: () => import("./views/Doc.vue"),

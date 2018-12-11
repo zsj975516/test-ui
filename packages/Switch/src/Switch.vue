@@ -41,6 +41,7 @@
 <script>
   export default {
     name: "USwitch",
+    componentName: 'USwitch',
     data() {
       return {
         selfModel: false,

@@ -18,6 +18,7 @@
 <script>
   export default {
     name: "UButton",
+    componentName: 'UButton',
     props: {
       type: {
         type: String,

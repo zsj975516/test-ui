@@ -2,6 +2,7 @@
   <div class="home">
     <div class="button_box">
       <u-button type="primary" @click="quickStart">文档</u-button>
+      <u-button  @click="test">测试</u-button>
     </div>
   </div>
 </template>
@@ -12,6 +13,9 @@
     methods: {
       quickStart() {
         this.$router.push('/doc');
+      },
+      test() {
+        this.$router.push('/test');
       }
     }
   }
