@@ -8,4 +8,5 @@ module.exports = {
   checkbox: {name: '复选框', order: 2},
   switch: {name: '开关', order: 3},
   messagebox: {name: '消息框', order: 4},
+  tree: {name: '树', order: 5},
 };
